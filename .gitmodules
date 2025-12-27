@@ -1,0 +1,3 @@
+[submodule "udemy-aws-de-labs"]
+	path = udemy-aws-de-labs
+	url = https://github.com/sidoncloud/udemy-aws-de-labs.git

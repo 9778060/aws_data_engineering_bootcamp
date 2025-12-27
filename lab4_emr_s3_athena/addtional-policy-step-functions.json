@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PassEMRDefaultServiceRole",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::...:role/EMR_DefaultRole",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "elasticmapreduce.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "PassEMRDefaultEC2Role",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "arn:aws:iam::...:role/EMR_EC2_DefaultRole",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
