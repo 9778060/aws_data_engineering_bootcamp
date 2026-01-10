@@ -1,0 +1,54 @@
+name: Deploy AWS Glue Job
+on:
+  push:
+    branches:
+      - main
+env:
+  AWS_REGION: us-east-1
+  GLUE_JOB_NAME: mysql-extraction-job
+  GLUE_SCRIPT_PATH: s3://.../glue-scripts/mysql_extraction.py
+  GITHUB_ACTIONS_ROLE: arn:aws:iam::...:role/custom-github-actions-glue-s3-role
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  deploy:
+    name: Deploy Glue Job
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install awscli boto3 pymysql
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ env.GITHUB_ACTIONS_ROLE }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload script to S3
+        run: |
+          aws s3 cp ./mysql_extraction.py s3://.../glue-scripts/
+
+      - name: Run unit tests
+        run: |
+          python -m unittest discover -s . -p 'test_*.py'
+
+      - name: Create or Update Glue Job
+        run: |
+          if aws glue get-job --job-name ${{ env.GLUE_JOB_NAME }}; then
+            echo "Updating Glue job..."
+            aws glue update-job --job-name ${{ env.GLUE_JOB_NAME }} --job-update '{"Role":"${{ env.GITHUB_ACTIONS_ROLE }}", "Command":{"Name":"glue-etl", "ScriptLocation":"${{ env.GLUE_SCRIPT_PATH }}", "PythonVersion":"3"}}'
+          else
+            echo "Creating Glue job..."
+            aws glue create-job --name ${{ env.GLUE_JOB_NAME }} --role ${{ env.GITHUB_ACTIONS_ROLE }} --command '{"Name":"glue-etl", "ScriptLocation":"${{ env.GLUE_SCRIPT_PATH }}", "PythonVersion":"3"}' --glue-version "4.0" --max-capacity 1
+          fi
