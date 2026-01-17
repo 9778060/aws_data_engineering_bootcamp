@@ -1,15 +1,24 @@
 AWS Data Engineering Bootcamp
 ============================
 
+.. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
+    :target: https://odoo-community.org/page/development-status
+    :alt: Beta
+.. |badge2| image:: https://img.shields.io/badge/License-MIT-blue.svg
+    :target: https://opensource.org/licenses/MIT
+    :alt: License: MIT
+
+|badge1| |badge2|
+
 Hands-On AWS Data Engineering Labs & Assignments
------------------------------------------------
+=======
 
 This repository contains a structured set of **hands-on labs and assignments** covering core AWS data engineering concepts — from ingestion and streaming to analytics, orchestration, and CI/CD patterns.
 
 The content aligns with practical exercises you’d encounter in real data engineering workflows using AWS services like Lambda, Kinesis, Glue, EMR, Redshift, Step Functions and more.
 
 Repository Contents
--------------------
+=======
 
 .. code::
 
@@ -35,7 +44,7 @@ Repository Contents
     └── readme.txt
 
 Getting Started
----------------
+=======
 
 To start working with the materials:
 
@@ -55,10 +64,10 @@ To start working with the materials:
 4. Review individual assignment/lab folders in order: start with **assignment1**, then move into **assignment2**, etc.
 
 Summary of Labs & Assignments
------------------------------
+=======
 
 Assignments
------------
+=======
 
 * ``assignment1_mysql_aurora/`` – Set up Aurora MySQL and explore ingestion basics.
 * ``assignment2_glue_pyspark_athena/`` – Glue PySpark jobs and Athena queries.
@@ -82,7 +91,7 @@ Labs
 
 
 Learning Objectives
--------------------
+=======
 
 By working through this repository, you should be able to:
 
@@ -93,7 +102,7 @@ By working through this repository, you should be able to:
 * Integrate core AWS services with Python, PySpark and serverless logic.
 
 Prerequisites
--------------
+=======
 
 Before you begin, you should have:
 
@@ -104,14 +113,14 @@ Before you begin, you should have:
 * Optional: Docker installed for local orchestration testing.
 
 Important Notes
----------------
+=======
 
 * Running AWS resources will incur charges. Always monitor and clean up after use.
 * Use smallest test configurations (t2/micro, minimal clusters) to reduce costs.
 * Security configurations in this repo are for learning — not hardened for production.
 
 Cleaning up Resources
----------------------
+=======
 
 Always delete AWS resources created during labs to avoid ongoing charges:
 
@@ -120,13 +129,14 @@ Always delete AWS resources created during labs to avoid ongoing charges:
 * Remove Kinesis streams and Firehose deliveries.
 * Drop temporary databases or Redshift clusters.
 
-License
--------
 
-This repository is provided for educational use. See the repository itself for any licensing files.
+Authors
+=======
 
-Author
-------
+* 9778060
+* Special credits and thanks to Sid Raghunath for his great AWS Data Engineering Bootcamp course, tutorials and resources (https://www.udemy.com/user/siddharth-raghunath/)
 
-This project was created as part of a personal AWS data engineering learning curriculum.
+Maintainers
+=======
 
+This repository is maintained by **9778060**.
