@@ -57,24 +57,29 @@ To start working with the materials:
 Summary of Labs & Assignments
 -----------------------------
 
-**Assignments**  
-* `assignment1_mysql_aurora/` – Set up Aurora MySQL and explore ingestion basics.  
-* `assignment2_glue_pyspark_athena/` – Glue PySpark jobs + Athena queries.  
-* `assignment3_kinesis_lambda/` – Streaming ingestion with Kinesis & Lambda.  
-* `assignment4_kinesis_pyspark/` – Kinesis with PySpark processing.  
-* `assignment5_cicd_lambda/` – CI/CD for Lambda workflows.
+Assignments
+-----------
 
-**Labs**  
-* `lab1_airflow_redshift_dynamo/` – Airflow orchestration with Redshift & DynamoDB.  
-* `lab2_airflow_spark_dynamo/` – Airflow + Spark + DynamoDB patterns.  
-* `lab3_stepfunctions_glue_redshift/` – AWS Step Functions + Glue + Redshift ETL.  
-* `lab4_emr_s3_athena/` – EMR batch processing with S3 and Athena analytics.  
-* `lab5_ecs_stepfunctions/` – ECS & Step Functions for containerized pipelines.  
-* `lab6_pyspark_glue_s3_athena/` – PySpark transformations in Glue with Athena.  
-* `lab7_kinesis_lambda_glue_dynamodb/` – Streaming + Lambda + Glue + DynamoDB.  
-* `lab8_pyspark_glue_kinesis/` – PySpark + Glue pipeline for Kinesis data.  
-* `lab9_cicd_githubactions_lambda_glue_ecs/` – Full CI/CD with GitHub Actions.  
-* `lab10_kinesis_firehose_lambda_redshift/` – Firehose + Lambda loading into Redshift.
+* ``assignment1_mysql_aurora/`` – Set up Aurora MySQL and explore ingestion basics.
+* ``assignment2_glue_pyspark_athena/`` – Glue PySpark jobs and Athena queries.
+* ``assignment3_kinesis_lambda/`` – Streaming ingestion with Kinesis and Lambda.
+* ``assignment4_kinesis_pyspark/`` – Kinesis processing with PySpark.
+* ``assignment5_cicd_lambda/`` – CI/CD pipelines for Lambda workflows.
+
+Labs
+----
+
+* ``lab1_airflow_redshift_dynamo/`` – Airflow orchestration with Redshift and DynamoDB.
+* ``lab2_airflow_spark_dynamo/`` – Airflow, Spark, and DynamoDB integration patterns.
+* ``lab3_stepfunctions_glue_redshift/`` – AWS Step Functions with Glue and Redshift ETL.
+* ``lab4_emr_s3_athena/`` – EMR batch processing using S3 and Athena.
+* ``lab5_ecs_stepfunctions/`` – ECS and Step Functions for containerized pipelines.
+* ``lab6_pyspark_glue_s3_athena/`` – PySpark transformations in AWS Glue with Athena.
+* ``lab7_kinesis_lambda_glue_dynamodb/`` – Streaming pipelines with Kinesis, Lambda, Glue, and DynamoDB.
+* ``lab8_pyspark_glue_kinesis/`` – PySpark and Glue pipelines for Kinesis data streams.
+* ``lab9_cicd_githubactions_lambda_glue_ecs/`` – End-to-end CI/CD using GitHub Actions.
+* ``lab10_kinesis_firehose_lambda_redshift/`` – Kinesis Firehose and Lambda loading data into Redshift.
+
 
 Learning Objectives
 -------------------
